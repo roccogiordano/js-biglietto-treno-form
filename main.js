@@ -13,3 +13,24 @@ let inputKmValue;
 let inputAgeValue;
 
 //
+
+
+// addEventListener Method
+
+document.getElementById("ticketForm").addEventListener("submit", function (event) {
+
+
+    // preventDefault Function
+
+    event.preventDefault();
+
+    inputAgeValue = inputAgeSection.value;
+
+    inputKmValue = inputKmSection.value;
+
+    //
+
+
+});
+
+//
