@@ -50,9 +50,17 @@ document.getElementById("ticketForm").addEventListener("submit", function (event
 
     price = Math.round(price * 100) / 100;
 
-    document.getElementById("priceText").innerText = `Il prezzo del tuo biglietto è di ${price}\u20AC`
+    document.getElementById("priceText").innerText = `Il prezzo del tuo biglietto è di ${price}\u20AC`;
 
-    document.getElementById("priceDisplay").classList.remove("d-none")
+    document.getElementById("priceDisplay").classList.remove("d-none");
+
+    //
+
+
+    // Fields Reset
+
+    inputKmSection.value = "";
+    inputAgeSection.value = "";
 
     //
 
