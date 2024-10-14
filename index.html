@@ -15,33 +15,41 @@
 <body>
     <!-- Heading -->
     <header class="bg-primary">
-            <div class="container-fluid">
-              <h1 class="text-white fs-3 py-3">
+        <div class="container-fluid">
+            <h1 class="text-white fs-3 py-3">
                 Biglietto del Treno
-              </h1>
+            </h1>
         </div>
     </header>
     <!-- /Heading -->
 
-    <!-- Ticket Form -->
     <main>
+        <!-- Ticket Form -->
         <div class="container col-12 col-md-9 col-lg-6 d-flex justify-content-center mt-5">
             <form class="col-12 px-4">
                 <div class="mb-3">
                     <label for="inputKm" class="form-label">Distanza</label>
-                    <input type="number" class="form-control" id="inputKm" step="0.5" min="0.5" max="100000" placeholder="Distanza" aria-describedby="inputKmHelp">
+                    <input type="number" class="form-control" id="inputKm" step="0.5" min="0.5" max="100000"
+                        placeholder="Distanza" aria-describedby="inputKmHelp">
                     <div id="inputKmHelp" class="form-text">Inserisci la distanza da percorrere in Km.</div>
                 </div>
                 <div class="mb-3">
                     <label for="inputAge" class="form-label">Età</label>
-                    <input type="number" class="form-control" id="inputAge" step="1" min="1" max="123" placeholder="Età" aria-describedby="inputAgeHelp">
+                    <input type="number" class="form-control" id="inputAge" step="1" min="1" max="123" placeholder="Età"
+                        aria-describedby="inputAgeHelp">
                     <div id="inputKmHelp" class="form-text">Inserisci l'età del viaggiatore.</div>
                 </div>
                 <button type="submit" class="btn btn-primary">Calcola il prezzo</button>
             </form>
         </div>
+        <!-- /Ticket Form -->
+
+        <!-- Price Display -->
+        <div class="container col-12 col-md-9 col-lg-6 d-flex justify-content-center mt-5 d-none" id="priceDisplay">
+            <p class="text-center px-4 fs-2" id="priceText"></p>
+        </div>
+        <!-- /Price Display -->
     </main>
-    <!-- /Ticket Form -->
 
     <!-- JS Link -->
     <script src="./main.js"></script>
