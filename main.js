@@ -46,6 +46,17 @@ document.getElementById("ticketForm").addEventListener("submit", function (event
     //
 
 
+    // DOM Manipulation
+
+    price = Math.round(price * 100) / 100;
+
+    document.getElementById("priceText").innerText = `Il prezzo del tuo biglietto è di ${price}\u20AC`
+
+    document.getElementById("priceDisplay").classList.remove("d-none")
+
+    //
+
+
 });
 
 //
