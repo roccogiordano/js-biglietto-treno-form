@@ -24,37 +24,59 @@ document.getElementById("ticketForm").addEventListener("submit", function (event
 
     event.preventDefault();
 
-    inputAgeValue = inputAgeSection.value;
+    inputKmValue = parseFloat(inputKmSection.value);
 
-    inputKmValue = inputKmSection.value;
+    inputAgeValue = parseInt(inputAgeSection.value);
 
     //
 
 
-    // Price Calculator
+    // Form Validation
 
-    if (inputAgeValue < 18) {
-        price = kmPrice * inputKmValue * 0.8;
+    if (isNaN(inputKmValue) || inputKmValue <= 0 || inputKmValue > 100000 || isNaN(inputAgeValue) || inputAgeValue <= 0 || inputAgeValue > 123) {
+
+
+        // Error Output & DOM Manipulation
+
+        document.getElementById("priceText").innerText = `Inserisci dei valori validi`;
+
+        document.getElementById("priceDisplay").classList.remove("d-none");
+
+        //
+
+
     }
-    else if (inputAgeValue >= 65) {
-        price = kmPrice * inputKmValue * 0.6;
-    }
+
     else {
-        price = kmPrice * inputKmValue;
+
+
+        // Price Calculator
+
+        if (inputAgeValue < 18) {
+            price = kmPrice * inputKmValue * 0.8;
+        }
+        else if (inputAgeValue >= 65) {
+            price = kmPrice * inputKmValue * 0.6;
+        }
+        else {
+            price = kmPrice * inputKmValue;
+        }
+
+        //
+
+
+        // Price Output & DOM Manipulation
+
+        price = Math.round(price * 100) / 100;
+
+        document.getElementById("priceText").innerText = `Il prezzo del tuo biglietto è di ${price}\u20AC`;
+
+        document.getElementById("priceDisplay").classList.remove("d-none");
+
+        //
+
+
     }
-
-    //
-
-
-    // DOM Manipulation
-
-    price = Math.round(price * 100) / 100;
-
-    document.getElementById("priceText").innerText = `Il prezzo del tuo biglietto è di ${price}\u20AC`;
-
-    document.getElementById("priceDisplay").classList.remove("d-none");
-
-    //
 
 
     // Fields Reset
