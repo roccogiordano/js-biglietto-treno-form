@@ -78,6 +78,8 @@ document.getElementById("ticketForm").addEventListener("submit", function (event
 
     }
 
+    //
+
 
     // Fields Reset
 
