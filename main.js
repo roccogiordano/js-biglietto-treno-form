@@ -31,6 +31,21 @@ document.getElementById("ticketForm").addEventListener("submit", function (event
     //
 
 
+    // Price Calculator
+
+    if (inputAgeValue < 18) {
+        price = kmPrice * inputKmValue * 0.8;
+    }
+    else if (inputAgeValue >= 65) {
+        price = kmPrice * inputKmValue * 0.6;
+    }
+    else {
+        price = kmPrice * inputKmValue;
+    }
+
+    //
+
+
 });
 
 //
